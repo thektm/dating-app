@@ -1,13 +1,17 @@
 import './App.css'
 
-function App() {
+import Counter from './components/counter'
+
+const App: React.FC = () => {
   
 
   return (
     <>
+    
     <div className=' bg-amber-50 w-screen h-screen flex justify-center items-center'>
-      <h1 className='text-black text-balance  font-light'>Let's Begin</h1>
+      <Counter/>
       </div>
+      
     </>
   )
 }
