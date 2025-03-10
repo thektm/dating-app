@@ -3,11 +3,11 @@ import MainNav from "./MainNav.tsx";
 
 const Header: React.FC = () => {
   return (
-    <div className="fixed top-0 left-0 w-full  bg-slate-400">
-      <div className="flex justify-start items-start">
+    <header className="fixed top-0 left-0 w-full bg-slate-400">
+      <div className="flex items-center">
         <MainNav />
       </div>
-    </div>
+    </header>
   );
 };
 
