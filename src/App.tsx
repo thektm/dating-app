@@ -1,24 +1,29 @@
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.tsx";
-import Contact from "./pages/Contact.tsx";
-import Aboutus from "./pages/AboutUs.tsx";
-import Header from "./componenets/Header.tsx";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { UserProvider } from './contexts/UserContext';
+import Header from './components/Header';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <>
-      <BrowserRouter>
-        <div>
-          <Header />
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<Aboutus />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </>
+    <ThemeProvider>
+      <UserProvider>
+        <Router>
+          <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
+        </Router>
+      </UserProvider>
+    </ThemeProvider>
   );
-};
+}
+
 export default App;
