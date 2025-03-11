@@ -9,7 +9,7 @@ const Hamburger: React.FC<HamburgerPropss> = ({ className, onClick }) => {
       <img
         src="https://www.svgrepo.com/download/525355/hamburger-menu.svg"
         alt="svg"
-        className={` w-10 h-10 rounded-full cursor-pointer `}
+        className={` max-w-8 max-h-8 cursor-pointer`}
         onClick={onClick}
       />
     </div>
