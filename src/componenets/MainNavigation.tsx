@@ -1,15 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const MainNav: React.FC = () => {
   const navigate = useNavigate();
+  const isDark = useTheme().isDark;
   return (
-    <nav className="flex justify-center items-center p-2">
+    <nav className="flex justify-start items-center p-2 lg:w-[85%]">
       <img
         src="https://cdnlogo.com/logos/r/85/react.svg"
         alt="menu"
-        className=" block m-2 w-10 h-10 rounded-full cursor-pointer"
+        className="m-2 w-10 h-10 rounded-full cursor-pointer"
       />
-      <div className="hidden lg:flex w-screen justify-center  items-center ">
+      <div
+        className={`hidden lg:flex justify-center items-center lg:w-[85%]
+          ${isDark ? ` text-white  ` : ` text-black  `}`}
+      >
         <h2
           onClick={() => {
             navigate("/home");
